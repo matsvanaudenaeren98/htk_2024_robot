@@ -36,6 +36,9 @@ ${CODE_PAPER}              class:murder
 ${CODE_VALUE}
 ${BUTTON_CONTINUE_PAGE_5}  class:ski-button
 
+#Page 6
+${NUMPAD_PAGE_6}            id:numpad
+
 *** Test Cases ***
 Open Test Website And Close Browser
     Open Test Website In Edge
@@ -97,4 +100,6 @@ Click on code paper
     Click Button    ${BUTTON_CONTINUE_PAGE_5}
 
 Enter gate number
-    Sleep    30
+        Wait Until Element Is Visible   ${NUMPAD_PAGE_6}
+        Click Element                   ${NUMPAD_PAGE_6}
+        Sleep    10
