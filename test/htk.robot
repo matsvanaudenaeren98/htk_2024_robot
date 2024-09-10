@@ -32,6 +32,7 @@ ${SKIP_BUTTON_PAGE_4}   class:ski-button
 
 #Page 5
 ${IMG_PAGE_5}              css:img
+${CODE_PAPER}              class:murder
 
 *** Test Cases ***
 Open Test Website And Close Browser
@@ -45,7 +46,7 @@ Open Page 3 And Close Browser
     Check if inputs are visible
     Fill in inputs
     Click skip
-
+    Click on code paper
     [Teardown]    Close Browser
 
 *** Keywords ***
@@ -85,4 +86,7 @@ Click skip
     Click Button                   ${SKIP_BUTTON_PAGE_4}
 
 Click on code paper
-    Click Element At Coordinates    ${IMG_PAGE_5}    0    0
+    Click Element At Coordinates    ${IMG_PAGE_5}    24    78
+    Wait Until Element Is Visible   ${CODE_PAPER}
+    Sleep    10
+
