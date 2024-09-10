@@ -12,7 +12,6 @@ ${TRANSMISSION_BUTTON}  id:action-button
 Open Test Website And Close Browser
     Open Test Website In Edge
     Click on go transmission
-    Click In Middle Of Screen
     [Teardown]    Close Browser
 
 *** Keywords ***
