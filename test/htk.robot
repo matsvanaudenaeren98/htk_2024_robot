@@ -15,7 +15,13 @@ ${BODY}                 //body
 
 #Page 2
 ${URL_PAGE_2}           https://hackthefuture.bignited.be/transition/07ecc934-9858-4d8f-a9c3-494fff648abf
+
+#Page 3
 ${URL_PAGE_3}           https://hackthefuture.bignited.be/information
+${NAME_PAGE_3}          id:name
+${AGE_PAGE_3}           id:age
+${SPECIES_PAGE_3}       id:species
+${PLANET_PAGE_3}        id:planet
 
 *** Test Cases ***
 Open Test Website And Close Browser
@@ -47,3 +53,9 @@ Click on planet
 Open Page 3 In Edge
     Open Browser                       ${URL_PAGE_3}    ${BROWSER}
     Sleep                              2
+
+Check if inputs are visible
+    Wait Until Element Is Visible      ${NAME_PAGE_3}
+    Wait Until Element Is Visible      ${AGE_PAGE_3}
+    Wait Until Element Is Visible      ${SPECIES_PAGE_3}
+    Wait Until Element Is Visible      ${PLANET_PAGE_3}
