@@ -30,6 +30,9 @@ ${INPUT_PLANET_PAGE_3}    Promethius
 #Page 4
 ${SKIP_BUTTON_PAGE_4}   class:ski-button
 
+#Page 5
+${IMG_PAGE_5}              css:img
+
 *** Test Cases ***
 Open Test Website And Close Browser
     Open Test Website In Edge
@@ -42,6 +45,7 @@ Open Page 3 And Close Browser
     Check if inputs are visible
     Fill in inputs
     Click skip
+
     [Teardown]    Close Browser
 
 *** Keywords ***
@@ -79,3 +83,6 @@ Fill in inputs
 Click skip
     Wait Until Element Is Visible  ${SKIP_BUTTON_PAGE_4}        15
     Click Button                   ${SKIP_BUTTON_PAGE_4}
+
+Click on code paper
+    Click Element At Coordinates    ${IMG_PAGE_5}    0    0
