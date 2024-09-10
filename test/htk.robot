@@ -33,6 +33,8 @@ ${SKIP_BUTTON_PAGE_4}   class:ski-button
 #Page 5
 ${IMG_PAGE_5}              css:img
 ${CODE_PAPER}              class:murder
+${CODE_VALUE}
+${BUTTON_CONTINUE_PAGE_5}  class:ski-button
 
 *** Test Cases ***
 Open Test Website And Close Browser
@@ -47,6 +49,8 @@ Open Page 3 And Close Browser
     Fill in inputs
     Click skip
     Click on code paper
+    Click skip
+    Enter gate number
     [Teardown]    Close Browser
 
 *** Keywords ***
@@ -88,5 +92,9 @@ Click skip
 Click on code paper
     Click Element At Coordinates    ${IMG_PAGE_5}    24    78
     Wait Until Element Is Visible   ${CODE_PAPER}
-    Sleep    10
+    ${CODE_VALUE}=    Get Text    ${CODE_PAPER}
+    Click Element            ${BODY}
+    Click Button    ${BUTTON_CONTINUE_PAGE_5}
 
+Enter gate number
+    Sleep    30
