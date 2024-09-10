@@ -27,6 +27,9 @@ ${INPUT_AGE_PAGE_3}     99
 ${INPUT_SPECIES_PAGE_3}    xenomorph
 ${INPUT_PLANET_PAGE_3}    Promethius
 
+#Page 4
+${SKIP_BUTTON_PAGE_4}   class:ski-button
+
 *** Test Cases ***
 Open Test Website And Close Browser
     Open Test Website In Edge
@@ -38,8 +41,8 @@ Open Page 3 And Close Browser
     Open Page 3 In Edge
     Check if inputs are visible
     Fill in inputs
+    Click skip
     [Teardown]    Close Browser
-
 
 *** Keywords ***
 Open Test Website In Edge
@@ -71,6 +74,8 @@ Fill in inputs
     Input Text    ${AGE_PAGE_3}     ${INPUT_AGE_PAGE_3}
     Select From List By Value    ${SPECIES_PAGE_3}    ${INPUT_SPECIES_PAGE_3}
     Input Text    ${PLANET_PAGE_3}    ${INPUT_PLANET_PAGE_3}
-    #Click Element    ${BODY}
     Press Keys    None    RETURN
-    Sleep    10
+
+Click skip
+    Wait Until Element Is Visible  ${SKIP_BUTTON_PAGE_4}        15
+    Click Button                   ${SKIP_BUTTON_PAGE_4}
