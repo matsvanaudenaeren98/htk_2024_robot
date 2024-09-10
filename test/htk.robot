@@ -12,15 +12,16 @@ ${TRANSMISSION_BUTTON}  id:action-button
 Open Test Website And Close Browser
     Open Test Website In Edge
     Click on go transmission
+    Click In Middle Of Screen
     [Teardown]    Close Browser
 
 *** Keywords ***
 Open Test Website In Edge
-    Open Browser          ${WEBSITE URL}    ${BROWSER}
-    Sleep                 2
-    Title Should Be       ${APPLICATION_TITLE}
+    Open Browser                       ${WEBSITE URL}    ${BROWSER}
+    Sleep                              2
+    Title Should Be                    ${APPLICATION_TITLE}
 
 Click on go transmission
-    Sleep                 3
-    Click Button          ${TRANSMISSION_BUTTON}
-    Sleep                 15
+    Wait Until Element Is Visible      ${TRANSMISSION_BUTTON}
+    Click Button                       ${TRANSMISSION_BUTTON}
+    Sleep                              15
